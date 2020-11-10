@@ -20,7 +20,7 @@ def predict():
     dat_useen=pd.DataFrame([final_features],columns=cols)
     prediction = predict_model(model, data=dat_useen,round=0)
     prediction = int(prediction.Label[0])
-    return render_template("home.html", prediction_text='The price of house is {}'.format(prediction))
+    return render_template("home.html", prediction_text='The price of house is $ {}'.format(prediction))
 
 
 
