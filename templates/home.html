@@ -46,8 +46,8 @@
     {{ prediction_text }}
      </div>
 
-    <form action="{{ url_for('predict')}}"method="POST">
-<input type="number" name="bedrooms" placeholder="Bedrooms(Size of bedrooms e.g 3.0)" onchange="setTwoNumberDecimal" min="1.0" max="9.0" step="0.1" value="0.0" required="required" /><br>
+    <form action="{{ url_for('predict')}} "method="POST">
+<input type="text" name="bedrooms" placeholder="Bedrooms(Size of bedrooms e.g 3.0)" onchange="setTwoNumberDecimal" min="1.0" max="9.0" step="0.1" value="0.0" required="required" /><br>
     	<input type="text" name="bathrooms" placeholder="Bathrooms(Size of bathrooms e.g 2.5)" required="required" /><br>
         <input type="text" name="sqft_living" placeholder="Living Area(e.g 1890)" required="required" /><br>
         <input type="text" name="sqft_lot" placeholder="Living Lot(e.g 15084)" required="required" /><br>
