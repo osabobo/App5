@@ -4,7 +4,7 @@ from pycaret.regression import *
 import numpy as np
 import pickle
 
-app=Flask(__name__)
+app= Flask(__name__)
 model = load_model('Housing')
 cols=['bedrooms','bathrooms','sqft_living','sqft_lot','floors','waterfront','view','condition','sqft_above','sqft_basement','yr_built','yr_renovated','city']
 
@@ -18,7 +18,7 @@ def predict():
     int_features = [x for x in request.form.values()]
     final_features = np.array(int_features)
     dat_useen=pd.DataFrame([final_features],columns=cols)
-    prediction = predict_model(model, data=dat_useen)
+    prediction = predict_model(model, data=dat_useen,round=0)
     prediction = int(prediction.Label[0])
     return render_template("home.html", prediction_text='The price of house is {}'.format(prediction))
 
