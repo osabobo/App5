@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 
 app= Flask(__name__)
-model = load_model('Housing')
+model = load_model('House')
 cols=['bedrooms','bathrooms','sqft_living','sqft_lot','floors','waterfront','view','condition','sqft_above','sqft_basement','yr_built','yr_renovated','city']
 
 
